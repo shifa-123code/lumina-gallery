@@ -1,0 +1,8 @@
+{
+  "name": "LUMINA — Visual Gallery",
+  "description": "A premium visual gallery showcasing curated photography, architecture, travel, and creative visual stories.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

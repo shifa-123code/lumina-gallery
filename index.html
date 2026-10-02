@@ -1,0 +1,750 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LUMINA — Visual Gallery</title>
+    <meta name="description" content="A premium visual gallery showcasing curated photography, architecture, travel, and creative visual stories." />
+    <meta property="og:title" content="LUMINA — Visual Gallery" />
+    <meta property="og:description" content="A premium visual gallery showcasing curated photography, architecture, travel, and creative visual stories." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <!-- ====================================================================
+         1. Sticky Navigation Bar
+         ==================================================================== -->
+    <header class="navbar" id="navbar">
+      <div class="container nav-container">
+        <!-- Logo -->
+        <a href="#hero" class="logo" aria-label="LUMINA Gallery Home">
+          <div class="logo-mark" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M12 3v6"/>
+              <path d="M12 15v6"/>
+              <path d="M3 12h6"/>
+              <path d="M15 12h6"/>
+            </svg>
+          </div>
+          <div>
+            <span>LUMINA</span>
+            <span class="logo-sub">Visual Gallery</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav aria-label="Main Navigation">
+          <ul class="nav-links">
+            <li><a href="#hero" class="nav-link active">Home</a></li>
+            <li><a href="#gallery" class="nav-link">Gallery</a></li>
+            <li><a href="#collections" class="nav-link">Collections</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- Navbar Actions (Search, Theme Toggle, Mobile Hamburger) -->
+        <div class="nav-actions">
+          <!-- Quick Search Icon Button -->
+          <button 
+            type="button" 
+            class="icon-btn" 
+            id="quickSearchBtn" 
+            aria-label="Search gallery" 
+            title="Search gallery"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/>
+              <path d="m21 21-4.3-4.3"/>
+            </svg>
+          </button>
+
+          <!-- Dark / Light Theme Toggle -->
+          <button 
+            type="button" 
+            class="icon-btn theme-toggle" 
+            id="themeToggle" 
+            aria-label="Toggle theme mode" 
+            title="Toggle theme mode"
+          >
+            <span id="themeIcon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+              </svg>
+            </span>
+          </button>
+
+          <!-- Mobile Hamburger Menu Button -->
+          <button 
+            type="button" 
+            class="hamburger icon-btn" 
+            id="hamburger" 
+            aria-label="Toggle mobile menu" 
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
+      <a href="#hero" class="mobile-nav-link">
+        Home
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+      <a href="#gallery" class="mobile-nav-link">
+        Gallery
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+      <a href="#collections" class="mobile-nav-link">
+        Collections
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+      <a href="#about" class="mobile-nav-link">
+        About
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+      <a href="#contact" class="mobile-nav-link">
+        Contact
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+    </nav>
+
+    <!-- ====================================================================
+         2. Hero Section
+         ==================================================================== -->
+    <section class="section hero-section" id="hero">
+      <div class="hero-bg-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Hero Left Content -->
+          <div class="hero-content reveal">
+            <div class="hero-kicker">
+              <span class="kicker-dot" aria-hidden="true"></span>
+              <span>Curated Visual Anthology</span>
+            </div>
+            
+            <h1 class="hero-title">
+              Stories Captured in <em>Every Frame</em>
+            </h1>
+
+            <p class="hero-subtitle">
+              An archival visual sanctuary celebrating the dialogue between natural illumination, architectural geometry, and timeless human encounters across the globe.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="#gallery" class="btn btn-primary">
+                Explore Gallery
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                </svg>
+              </a>
+              <a href="#collections" class="btn btn-secondary">
+                View Collections
+              </a>
+            </div>
+
+            <!-- Small Statistics -->
+            <div class="hero-stats">
+              <div class="stat-item">
+                <span class="stat-number">120+</span>
+                <span class="stat-label">Archival Images</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">8</span>
+                <span class="stat-label">Collections</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">24</span>
+                <span class="stat-label">Featured Stories</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Right Visual Presentation -->
+          <div class="hero-visual reveal reveal-delay-2">
+            <div class="hero-card-stack">
+              <div class="hero-main-card">
+                <img 
+                  src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=90" 
+                  alt="Yosemite Valley reflections with crystal water and granite mountain peaks"
+                  loading="eager"
+                  onload="this.classList.add('loaded')"
+                />
+                <div class="hero-card-caption">
+                  <div>
+                    <div class="hero-caption-title">Sierra Reflections</div>
+                    <div class="hero-caption-meta">Yosemite Valley · Cathedral Peaks</div>
+                  </div>
+                  <div class="badge-icon" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Floating Accent Badge -->
+              <div class="hero-floating-badge" aria-hidden="true">
+                <div class="badge-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                </div>
+                <div class="badge-text">
+                  <strong>Exhibition Edition</strong>
+                  <span>Curated Autumn 2024</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         3. Gallery Section with Dynamic Filters & Live Search
+         ==================================================================== -->
+    <section class="section gallery-section" id="gallery">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header reveal">
+          <span class="section-tag">Visual Archive</span>
+          <h2 class="section-title">The Curated Gallery</h2>
+          <p class="section-subtitle">
+            Explore our ever-expanding compilation of architectural perspectives, tranquil wilderness, and candid human narratives.
+          </p>
+        </div>
+
+        <!-- Filter & Search Toolbar -->
+        <div class="gallery-controls reveal">
+          <div class="controls-bar">
+            <!-- Filter Tabs -->
+            <div class="filter-group" role="tablist" aria-label="Gallery category filters">
+              <button type="button" class="filter-btn active" data-filter="all" role="tab" aria-selected="true">
+                All
+              </button>
+              <button type="button" class="filter-btn" data-filter="nature" role="tab" aria-selected="false">
+                Nature
+              </button>
+              <button type="button" class="filter-btn" data-filter="travel" role="tab" aria-selected="false">
+                Travel
+              </button>
+              <button type="button" class="filter-btn" data-filter="architecture" role="tab" aria-selected="false">
+                Architecture
+              </button>
+              <button type="button" class="filter-btn" data-filter="people" role="tab" aria-selected="false">
+                People
+              </button>
+              <button type="button" class="filter-btn" data-filter="lifestyle" role="tab" aria-selected="false">
+                Lifestyle
+              </button>
+              <button type="button" class="filter-btn" data-filter="abstract" role="tab" aria-selected="false">
+                Abstract
+              </button>
+              <!-- Dedicated Favorites Filter Button -->
+              <button type="button" class="filter-btn fav-filter-btn" data-filter="favorites" role="tab" aria-selected="false">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                </svg>
+                <span>Favorites</span>
+                <span class="filter-badge-count" id="favFilterCount">0</span>
+              </button>
+            </div>
+
+            <!-- Search Box -->
+            <div class="search-wrapper">
+              <span class="search-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"/>
+                  <path d="m21 21-4.3-4.3"/>
+                </svg>
+              </span>
+              <input 
+                type="text" 
+                id="searchInput" 
+                class="search-input" 
+                placeholder="Search by title, location, category..." 
+                aria-label="Search gallery stories"
+                autocomplete="off"
+              />
+              <button 
+                type="button" 
+                id="searchClearBtn" 
+                class="search-clear-btn" 
+                aria-label="Clear search query"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Live Status Bar with Layout Switcher -->
+          <div class="gallery-status-bar">
+            <span class="gallery-count-text" id="galleryCountDisplay">
+              Showing <strong>18</strong> stories
+            </span>
+
+            <div class="gallery-view-options" role="group" aria-label="Gallery layout switcher">
+              <button type="button" class="view-btn active" id="viewGridBtn" aria-label="Switch to aligned grid view" title="Aligned Grid View">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="7" height="7" x="3" y="3" rx="1"/>
+                  <rect width="7" height="7" x="14" y="3" rx="1"/>
+                  <rect width="7" height="7" x="14" y="14" rx="1"/>
+                  <rect width="7" height="7" x="3" y="14" rx="1"/>
+                </svg>
+                <span>Aligned Grid</span>
+              </button>
+              <button type="button" class="view-btn" id="viewMasonryBtn" aria-label="Switch to staggered masonry view" title="Masonry View">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="7" height="10" x="3" y="3" rx="1"/>
+                  <rect width="7" height="6" x="14" y="3" rx="1"/>
+                  <rect width="7" height="10" x="14" y="11" rx="1"/>
+                  <rect width="7" height="6" x="3" y="15" rx="1"/>
+                </svg>
+                <span>Masonry</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Masonry Grid Container -->
+        <div class="gallery-grid" id="galleryGrid">
+          <!-- Dynamically populated by script.js -->
+        </div>
+
+        <!-- Clean Empty State Message -->
+        <div class="gallery-empty" id="galleryEmpty">
+          <div class="empty-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/>
+              <path d="m21 21-4.3-4.3"/>
+              <path d="M11 8v6"/>
+              <path d="M8 11h6"/>
+            </svg>
+          </div>
+          <h3 class="empty-title">No stories found</h3>
+          <p class="empty-text">
+            We couldn't locate any captures matching your criteria. Try adjusting your search query or reset the filter.
+          </p>
+          <button type="button" class="btn btn-secondary" id="emptyResetBtn">
+            Reset All Filters
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         4. Featured Collections Section
+         ==================================================================== -->
+    <section class="section collections-section" id="collections">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Curated Series</span>
+          <h2 class="section-title">Featured Collections</h2>
+          <p class="section-subtitle">
+            Thematic explorations curated to offer profound depth and visual harmony across select motifs.
+          </p>
+        </div>
+
+        <div class="collections-grid">
+          <!-- Collection 1 -->
+          <div class="collection-card reveal" data-category="Nature">
+            <img 
+              src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=85" 
+              alt="Deep emerald forest trees"
+              class="collection-img"
+              loading="lazy"
+            />
+            <div class="collection-overlay">
+              <span class="collection-count">Series 01 · 28 Works</span>
+              <h3 class="collection-title">Whispers of Nature</h3>
+              <p class="collection-desc">
+                Untamed alpine pinnacles, primeval moss forest solitudes, and crystalline glacial fissures.
+              </p>
+              <button type="button" class="collection-btn explore-collection-btn" data-category="Nature">
+                Explore Collection
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Collection 2 -->
+          <div class="collection-card reveal reveal-delay-1" data-category="Architecture">
+            <img 
+              src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=85" 
+              alt="Minimal architectural geometric interior"
+              class="collection-img"
+              loading="lazy"
+            />
+            <div class="collection-overlay">
+              <span class="collection-count">Series 02 · 34 Works</span>
+              <h3 class="collection-title">Urban Geometry</h3>
+              <p class="collection-desc">
+                Brutalist concrete monoliths, sculptural cantilevered horizons, and rhythmic glass façades.
+              </p>
+              <button type="button" class="collection-btn explore-collection-btn" data-category="Architecture">
+                Explore Collection
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Collection 3 -->
+          <div class="collection-card reveal reveal-delay-2" data-category="Travel">
+            <img 
+              src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=85" 
+              alt="Stone alley illuminated by lanterns in Kyoto"
+              class="collection-img"
+              loading="lazy"
+            />
+            <div class="collection-overlay">
+              <span class="collection-count">Series 03 · 42 Works</span>
+              <h3 class="collection-title">Journeys & Places</h3>
+              <p class="collection-desc">
+                Windswept Sahara dunes, historic Kyoto lantern alleyways, and quiet Mediterranean coves.
+              </p>
+              <button type="button" class="collection-btn explore-collection-btn" data-category="Travel">
+                Explore Collection
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         5. About Section
+         ==================================================================== -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <!-- Visual Framing on Left -->
+          <div class="about-visual reveal">
+            <div class="about-image-frame">
+              <img 
+                src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1200&q=85" 
+                alt="Scandinavian timber house overlooking calm fjord"
+                loading="lazy"
+              />
+            </div>
+            <!-- Small Editorial Stamp -->
+            <div class="about-caption-stamp" aria-hidden="true">
+              <span class="stamp-mark">L</span>
+              <div class="stamp-info">
+                <strong>Curatorial Standard</strong>
+                <span>Est. 2024 · Archival Grade</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Editorial Narrative on Right -->
+          <div class="about-content reveal reveal-delay-1">
+            <span class="section-tag" style="margin-bottom: 8px;">The Lumina Philosophy</span>
+            <h2 class="about-lead">
+              A sanctuary dedicated to the poetry of light, human contemplation, and form.
+            </h2>
+            <p class="about-text">
+              LUMINA was founded as a global visual gallery created to showcase exceptional photography across architecture, travel, nature, and creative narratives. We believe that true photography does not simply document a subject—it reveals the unspoken resonance between human presence and our surrounding spaces.
+            </p>
+            <p class="about-text">
+              Every print and digital entry in our archive is evaluated under strict curatorial standards of compositional tension, chromatic restraint, and narrative authenticity.
+            </p>
+
+            <!-- Curatorial Metrics -->
+            <div class="about-metrics">
+              <div class="metric-box">
+                <span class="metric-val">45+</span>
+                <span class="metric-label">Exhibitions Hosted</span>
+              </div>
+              <div class="metric-box">
+                <span class="metric-val">18</span>
+                <span class="metric-label">Global Curators</span>
+              </div>
+              <div class="metric-box">
+                <span class="metric-val">99.4%</span>
+                <span class="metric-label">Archival Rating</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         6. Contact / Inquiries Section
+         ==================================================================== -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="contact-card reveal">
+          <!-- Info Column -->
+          <div class="contact-info">
+            <span class="section-tag" style="margin-bottom: 8px;">Direct Correspondence</span>
+            <h2 class="contact-info-title">Curatorial Inquiries & Print Commissions</h2>
+            <p class="contact-info-desc">
+              Whether you are an independent photographer seeking submission review, an architect exploring spatial documentation, or an art collector inquiring about fine art limited editions, our curatorial team welcomes your message.
+            </p>
+            
+            <div class="contact-direct-links">
+              <div class="contact-link-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="16" x="2" y="4" rx="2"/>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+                <span>curator@lumina-gallery.com</span>
+              </div>
+              <div class="contact-link-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+                <span>Studio 4B, 18 Rue de Verneuil, Paris / Kyoto Atelier</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Functional Contact Form -->
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="contactName" class="form-label">Your Name</label>
+              <input type="text" id="contactName" class="form-input" placeholder="e.g. Julian Hayes" required />
+            </div>
+
+            <div class="form-group">
+              <label for="contactEmail" class="form-label">Email Address</label>
+              <input type="email" id="contactEmail" class="form-input" placeholder="julian@example.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="contactMessage" class="form-label">Inquiry Details</label>
+              <textarea id="contactMessage" class="form-textarea" placeholder="Describe your project, exhibition concept, or print request..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="align-self: flex-start; margin-top: 8px;">
+              Send Inquiry
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         7. Fullscreen Lightbox Modal
+         ==================================================================== -->
+    <div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true" aria-label="Image Fullscreen Lightbox">
+      <div class="lightbox-container">
+        <!-- Lightbox Header Bar -->
+        <div class="lightbox-header">
+          <div class="lightbox-meta-wrap">
+            <span class="lightbox-category-badge" id="lightboxCategory">Nature</span>
+            <span class="lightbox-counter" id="lightboxCounter">1 / 18</span>
+          </div>
+
+          <div class="lightbox-actions">
+            <!-- Lightbox Favorite Toggle -->
+            <button 
+              type="button" 
+              class="lightbox-btn lightbox-fav-btn" 
+              id="lightboxFavBtn" 
+              aria-label="Save to favorites"
+              title="Save to favorites"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+              </svg>
+            </button>
+
+            <!-- Lightbox Close Button -->
+            <button 
+              type="button" 
+              class="lightbox-btn lightbox-close-btn" 
+              id="lightboxCloseBtn" 
+              aria-label="Close Lightbox (Esc)"
+              title="Close (Esc)"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Lightbox Body / Media Container -->
+        <div class="lightbox-body">
+          <!-- Previous Button -->
+          <button 
+            type="button" 
+            class="lightbox-nav-btn lightbox-prev" 
+            id="lightboxPrevBtn" 
+            aria-label="Previous Image (Arrow Left)"
+            title="Previous (Arrow Left)"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m15 18-6-6 6-6"/>
+            </svg>
+          </button>
+
+          <!-- Current Image Container -->
+          <div class="lightbox-image-wrap">
+            <img 
+              id="lightboxImage" 
+              class="lightbox-image" 
+              src="" 
+              alt=""
+            />
+          </div>
+
+          <!-- Next Button -->
+          <button 
+            type="button" 
+            class="lightbox-nav-btn lightbox-next" 
+            id="lightboxNextBtn" 
+            aria-label="Next Image (Arrow Right)"
+            title="Next (Arrow Right)"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m9 18 6-6-6-6"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Lightbox Footer Bar -->
+        <div class="lightbox-footer">
+          <h3 class="lightbox-title" id="lightboxTitle"></h3>
+          <p class="lightbox-caption" id="lightboxCaption"></p>
+          <div class="lightbox-details" id="lightboxDetails"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         8. Footer
+         ==================================================================== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-top">
+          <!-- Brand Column -->
+          <div>
+            <a href="#hero" class="logo" style="margin-bottom: 8px;">
+              <div class="logo-mark" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="9"/>
+                  <path d="M12 3v6"/><path d="M12 15v6"/><path d="M3 12h6"/><path d="M15 12h6"/>
+                </svg>
+              </div>
+              <div>
+                <span>LUMINA</span>
+                <span class="logo-sub">Visual Gallery</span>
+              </div>
+            </a>
+            <p class="footer-brand-desc">
+              Dedicated to celebrating exceptional imagery, architecture, and world-class curatorial storytelling across every frame.
+            </p>
+            <div class="social-links">
+              <a href="#" class="social-btn" aria-label="Follow Lumina on Instagram" title="Instagram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                </svg>
+              </a>
+              <a href="#" class="social-btn" aria-label="Follow Lumina on Unsplash" title="Unsplash">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 4h10v5H7z"/><path d="M17 11h4v9H3v-9h4v5h10z"/>
+                </svg>
+              </a>
+              <a href="#" class="social-btn" aria-label="Follow Lumina on Behance" title="Behance">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 9h4c1.5 0 2.5 1 2.5 2.5S8.5 14 7 14H3z"/><path d="M3 14h5c1.5 0 2.5 1 2.5 2.5S9.5 19 8 19H3z"/><path d="M14 13h7c0-2-1.5-4-4-4s-4 2-4 4c0 3 2 4.5 4 4.5 1.5 0 3-.8 3.5-1.5"/><path d="M15 9h5"/>
+                </svg>
+              </a>
+              <a href="#" class="social-btn" aria-label="Follow Lumina on X / Twitter" title="X">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4l11.733 16h4.267l-11.733-16z"/><path d="M4 20l6.768-6.768m2.464-2.464L20 4"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Navigation -->
+          <div>
+            <h4 class="footer-col-title">Navigation</h4>
+            <ul class="footer-links">
+              <li><a href="#hero" class="footer-link">Home Archive</a></li>
+              <li><a href="#gallery" class="footer-link">Curated Gallery</a></li>
+              <li><a href="#collections" class="footer-link">Featured Series</a></li>
+              <li><a href="#about" class="footer-link">About Lumina</a></li>
+              <li><a href="#contact" class="footer-link">Contact Curators</a></li>
+            </ul>
+          </div>
+
+          <!-- Categories -->
+          <div>
+            <h4 class="footer-col-title">Disciplines</h4>
+            <ul class="footer-links">
+              <li><a href="#gallery" class="footer-link">Alpine & Nature</a></li>
+              <li><a href="#gallery" class="footer-link">Brutalist Architecture</a></li>
+              <li><a href="#gallery" class="footer-link">Expedition Travel</a></li>
+              <li><a href="#gallery" class="footer-link">Intimate Portraits</a></li>
+              <li><a href="#gallery" class="footer-link">Minimalist Abstracts</a></li>
+            </ul>
+          </div>
+
+          <!-- Curatorial Office -->
+          <div>
+            <h4 class="footer-col-title">Atelier</h4>
+            <ul class="footer-links">
+              <li class="footer-link">curator@lumina-gallery.com</li>
+              <li class="footer-link">Paris · Kyoto · Zurich</li>
+              <li class="footer-link">Hours: Mon–Fri 09:00–18:00 CET</li>
+              <li class="footer-link">ISSN 2841-912X</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Footer Bottom Bar -->
+        <div class="footer-bottom">
+          <p>© 2024–2026 LUMINA Visual Gallery. All photographic rights reserved to respective artists.</p>
+          <button type="button" class="back-to-top-btn" id="backToTopBtn" aria-label="Back to top of page">
+            <span>Back to top</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m18 15-6-6-6 6"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Toast Notification Host -->
+    <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+    <!-- Application Script -->
+    <script type="module" src="/script.js"></script>
+  </body>
+</html>
